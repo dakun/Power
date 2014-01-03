@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="site.master.cs" Inherits="Song.Web.site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+	<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/rhinoslider-1.05.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript">
+		var resizeMenu = function () {
+			var count = $("#menu ul li").length;
+			var width = ((940 - count - 1) / count);
+			$("#menu ul li").width(width);
+		};
+
+		$(function () {
+			resizeMenu();
+			//$('#slider').rhinoslider();
+		});
+	</script>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<div id="header">
+		<div class="wrap">
+			<div id="header-top">
+				<div id="logo">
+					<a href="/">
+						<img src="css/images/logo.jpg" alt="" /></a>
+				</div>
+				<div id="logo-right">
+					<p>
+						欢迎来到XX电池科技有限公司 <a href="#">首页</a> | <a href="/en/index.aspx">English</a> | <a href="#">联系我们</a></p>
+				</div>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="first current"><a href="index.aspx">首页</a></li>
+					<li><a href="about.aspx?pid=165">关于我们</a></li>
+					<li><a href="product.aspx">产品中心</a></li>
+					<li><a href="supports.aspx">技术支持</a></li>
+					<li><a href="service.aspx">客户服务</a></li>
+					<li><a href="sale.aspx">销售网络</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div>
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		</asp:ContentPlaceHolder>
+	</div>
+	<div id="footer">
+		<div class="wrap">
+			<div class="footer-content">
+				<p>
+					版权所有: <%=Maticsoft.Common.webcommand.Getinfom("webname",2) %></p>
+				<p>
+					地址: <%=Maticsoft.Common.webcommand.Getinfom("webadd",2) %> 电话: <%=Maticsoft.Common.webcommand.Getinfom("webtel",2) %> 传真: <%=Maticsoft.Common.webcommand.Getinfom("webfax",2) %></p>
+				<p>
+					邮箱: <%=Maticsoft.Common.webcommand.Getinfom("webemail",2) %></p>
+				<p>
+					网站技术支持: <a href="http://www.henhaoji.com.cn" target="_blank">厦门锤子网站建设工作室</a></p>
+			</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>
